@@ -1,0 +1,93 @@
+<div class="form-group row addEditForm">
+
+    <label class="col-sm-2 col-form-label">First Name</label>
+    <div class="col-sm-8">
+        <input type="text" class="form-control" [(ngModel)]="EmployeeFirstName" 
+        placeholder="Enter Employee First Name" maxlength="100">
+    </div>
+    <div class="col-sm-2"></div>
+    <label class="col-sm-2 col-form-label">Last Name</label>
+    <div class="col-sm-8">
+        <input type="text" class="form-control" [(ngModel)]="EmployeeLastName" 
+        placeholder="Enter Employee Last Name" maxlength="200">
+    </div>
+    <div class="col-sm-2"></div>
+    <label class="col-sm-2 col-form-label">Middle Name</label>
+    <div class="col-sm-8">
+        <input type="text" class="form-control" [(ngModel)]="EmployeeMiddleName" 
+        placeholder="Enter Employee Middle Name (Optional)" maxlength="100">
+    </div>
+    <div class="col-sm-2"></div>
+    <label class="col-sm-2 col-form-label">Department</label>
+    <div class="col-sm-3">
+        <select class="form-control" [(ngModel)]="Department">
+            <option>--Select--</option>
+            <option *ngFor="let depName of DepartmentsList">
+                {{depName.DepartmentName}}
+            </option>
+        </select>
+    </div>
+    <label class="col-sm-2 col-form-label">Date Of Joinig</label>
+    <div class="col-sm-3">
+        <input type="date" class="form-control" [(ngModel)]="DateOfJoining" 
+        placeholder="Enter Date Of Joining">
+    </div>
+    <div class="col-sm-2"></div>
+    <label class="col-sm-2 col-form-label">Street Address</label>
+    <div class="col-sm-8">
+        <input type="text" class="form-control" [(ngModel)]="StreetAddress" 
+        placeholder="Enter Street Address" maxlength="100">
+    </div>
+    <div class="col-sm-2"></div>
+    <label class="col-sm-2 col-form-label">City</label>
+    <div class="col-sm-4">
+        <input type="text" class="form-control" [(ngModel)]="City" 
+        placeholder="Enter City" maxlength="100">
+    </div>
+    <label class="col-sm-1 col-form-label">State</label>
+    <div class="col-sm-3">
+        <input type="text" class="form-control" [(ngModel)]="State" 
+        placeholder="Enter State/Province" maxlength="100">
+    </div>
+    <div class="col-sm-2"></div>
+    <label class="col-sm-2 col-form-label">Country</label>
+    <div class="col-sm-4">
+        <input type="text" class="form-control" [(ngModel)]="Country" 
+        placeholder="Enter Country" maxlength="100">
+    </div>
+    <label class="col-sm-1 col-form-label">ZipCode</label>
+    <div class="col-sm-3">
+        <input type="text" class="form-control" [(ngModel)]="ZipCode" 
+        placeholder="Enter ZipCode" maxlength="13">
+    </div>
+    <div class="col-sm-2"></div>
+    <label class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-8">
+        <input type="email" class="form-control" [(ngModel)]="Email" 
+        placeholder="Enter Email" maxlength="100">
+    </div>
+    <div class="col-sm-2"></div>
+    <label class="col-sm-2 col-form-label">Phone Number</label>
+    <div class="col-sm-8">
+        <input type="tel" class="form-control" [(ngModel)]="PhoneNumber" 
+        placeholder="Enter Phone Number" maxlength="13">
+    </div>
+    <div class="col-sm-2"></div>
+    <label class="col-sm-2 col-form-label">Salary</label>
+    <div class="col-sm-8">
+        <input type="text" class="form-control" [(ngModel)]="Salary" 
+        placeholder="Enter Salary" maxlength="13">
+    </div>
+    <div class="col-sm-2"></div>
+    <label class="col-sm-2 col-form-label">Photo</label>
+    <div class="ml-3 bd-highlight" style="width: 40%;">
+        <img [src]=PhotoFilePath height="250px;" width="200px;">
+        <input type="file" (change)="uploadPhoto($event)" class="mt-2"/>
+    </div>
+</div>
+
+<button (click)="addEmployee()" *ngIf="emp.EmployeeId==0" 
+class="btn btn-primary">Add</button>
+
+<button (click)="updateEmployee()" *ngIf="emp.EmployeeId!=0" 
+class="btn btn-primary">Update</button>

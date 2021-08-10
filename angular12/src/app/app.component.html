@@ -1,0 +1,62 @@
+<mat-toolbar class="mat-elevation-z8">
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+  <i class="bi bi-gear">Employee Management System</i>
+  
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+    <img class="avatar mat-elevation-z8" src="assets/img/jojo.jpg" />
+
+    <h4 class="name">JoJo</h4>
+    <p class="designation">Human Resources Staff</p>
+
+    <mat-divider></mat-divider>
+
+    <button routerLink="/" mat-button class="menu-button">
+      <mat-icon>home</mat-icon>
+      <span> Home</span>
+    </button>
+    <button routerLink="employees" mat-button class="menu-button">
+      <i class='bi bi-people-fill nav__icon'></i>
+      <span> Employees</span>
+    </button>
+    <button routerLink="departments" mat-button class="menu-button">
+      <i class='bi bi-diagram-3 nav__icon'></i>
+      <span> Departments</span>
+    </button>
+    <!-- <button mat-button class="menu-button">
+      <i class='bi bi-cash-coin nav__icon'></i>
+      <span> Salaries</span>
+    </button> -->
+    <button mat-button class="menu-button">
+      <i class='bi bi-emoji-sunglasses nav__icon'></i>
+      <span> Vacation</span>
+    </button>
+    <button mat-button class="menu-button">
+      <i class='bi bi-person nav__icon' ></i>
+      <span>    My Profile</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button">
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+.modal-backdrop {
+    z-index: -1;
+  }
+  .addEditForm{
+    color:black;
+    font-size: 1rem !important;
+}
+
+button{
+    box-shadow: inset 0 0 0 0 #002760;
+    transition: ease-out 0.3s;
+    outline:none;
+}
+
+button:hover{
+    box-shadow: inset 300px 0 0 0 #002760;
+}
+
+label{
+    font-size: 1rem !important;
+    margin-bottom: 20px !important;
+}
+.dataTables_info{
+    font-size: 1rem !important;
+    margin-bottom: 20px !important;
+}
+.dataTables_paginate{
+    font-size: 1rem !important;
+    margin-bottom: 20px !important;
+}
